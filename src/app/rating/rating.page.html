@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons  slot="start">
+      <ion-back-button color="liger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card color="dark">
+    <ion-card-title>
+      <ion-input placeholder="Username" [(ngModel)]="username"></ion-input>
+    </ion-card-title>
+    <ion-card-subtitle>
+      <ion-button shape="round" (click)="submit()" expand="block" color="liger"><ion-icon name="create-outline"></ion-icon>Update</ion-button>
+    </ion-card-subtitle>
+  </ion-card>
+</ion-content>

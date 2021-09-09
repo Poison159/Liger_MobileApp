@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button color="liger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">{{branch.resturant.name}} | {{branch.name}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-img style="height: 30%;" [src]="branch.resturant.imgPath"></ion-img>
+    <ion-card color="dark" *ngIf="branch.branchMeals.length !== 0">
+      <ion-button shape="round" color="liger" (click)="details('Special')" expand="block">Specials</ion-button>
+    </ion-card>
+    <ion-card color="dark" *ngFor="let cat of branch.resturant.categories">
+      <ion-button shape="round" color="liger" (click)="details(cat)" expand="block">{{cat}}</ion-button>
+    </ion-card>
+    <ion-row>
+          <ion-text style="margin:auto;">{{branch.contactNumber}}</ion-text>
+    </ion-row>
+
+    <ion-grid >
+      <ion-row >
+        <ion-col>
+          <ion-button shape="round" color="liger" expand="block"  (click)="navigateToBookingModel()"> Request Reservation</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid *ngIf="!already.includes(branch.id)">
+      <ion-row *ngIf="!branch.open">
+        <ion-col>
+          <ion-button shape="round" color="liger" expand="block"  (click)="changeRated(branch.id)"> Rate</ion-button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="branch.open">
+        <ion-col size="6">
+          <div>
+          
+          <rating style="margin: auto;zoom:0.7" [rate]="branch.rating"
+            readonly="false"
+            size="small" 
+            (rateChange)="onRateChange($event,branch.id)">
+            </rating>
+          </div>
+        </ion-col>
+        <ion-col size="3">
+          <div>
+          <ion-button shape="round" (click)="cancelRating(branch.id)" fill="outline" expand="block" color="light">Cancel</ion-button>
+        </div>
+        
+        </ion-col>
+        <ion-col size="3">
+          <div>
+          <ion-button shape="round" (click)="submitRating()" expand="block" color="liger">Submit</ion-button>
+        </div>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="branch.open">
+        <ion-card color="dark">
+          <ion-textarea color="light" [(ngModel)]="branch.openOrClosedInfo"  placeholder="Enter comment here..." rows="6" cols="50"></ion-textarea>
+        </ion-card>
+      </ion-row>
+    </ion-grid>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <img slot="start"  style="width:50px; height:50px; border-radius:90%" [src]="imgUrl"/>
+    <ion-icon (click)="logOut()"color="liger" name="exit-outline" slot="end" style="padding-right: 5px; zoom:2.0"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item (click)="gotToRating()" *ngIf="user" color="dark">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="11">
+          <ion-text   color="liger">Hey {{username}}</ion-text>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+  <div style="height: 15%;">
+    <ion-grid>
+      <ion-row style="border-bottom: 0.5px solid grey !important">
+        <ion-col size="8">
+          <ion-input color="light" [(ngModel)]="searchStr" placeholder="🔍 Search Restaurants"></ion-input>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button shape="round" color="liger" size="medium" (click)="search()" expand="block"><p style="color:black">Search</p></ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <br/>
+  <div>
+    <ion-grid>
+      <ion-row>  
+        <ion-col size="6">
+          <ion-card (click)="beforeScan()"  style="background-color:transparent">
+            <ion-card-title>
+             <ion-icon class="center"  color="dark" style="zoom:2.2" name = "qr-code-outline"></ion-icon>
+            </ion-card-title>
+            <ion-card-subtitle><p style="color: black;text-align: center;">Scan</p></ion-card-subtitle>
+          </ion-card>
+          <!-- <ion-button shape="round" color="liger" size="large"  expand="block"><ion-icon name="qr-code-outline"></ion-icon>Scan</ion-button> -->
+        </ion-col>
+        <ion-col size="6">
+          <ion-card (click)="nearMe()"  style="background-color:transparent">
+            <ion-card-title>
+             <ion-icon class="center" color="dark" style="zoom:2.2" name = "compass-outline"></ion-icon>
+            </ion-card-title>
+            <ion-card-subtitle><p style="color: black;text-align: center;">Near Me</p></ion-card-subtitle>
+          </ion-card>
+          <!-- <ion-button shape="round" color="liger" size="large"  expand="block"><ion-icon name="compass-outline"></ion-icon>Near Me</ion-button> -->
+        </ion-col>
+      </ion-row>
+      <ion-row>  
+        <ion-col size="6">
+          <ion-card (click)="noFunc()"   style="background-color:transparent">
+            <ion-card-title>
+             <ion-icon class="center" color="dark" style="zoom:2.2" name = "card-outline"></ion-icon>
+            </ion-card-title>
+            <ion-card-subtitle><p style="color: black;text-align: center;">Payment</p></ion-card-subtitle>
+          </ion-card>
+          <!-- <ion-button shape="round" color="liger" size="large"  expand="block"><ion-icon name="card-outline"></ion-icon></ion-button> -->
+        </ion-col>
+        <ion-col size="6">
+          <ion-card routerLink="/contact-us" style="background-color:transparent">
+            <ion-card-title>
+             <ion-icon class="center" color="dark" style="zoom:2.2" name = "information-circle-outline"></ion-icon>
+            </ion-card-title>
+            <ion-card-subtitle><p style="color:black;text-align: center;">Help Center</p></ion-card-subtitle>
+          </ion-card>
+          <!-- <ion-button shape="round" color="liger" size="large"  expand="block"><ion-icon name=""></ion-icon>Help Center</ion-button> -->
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

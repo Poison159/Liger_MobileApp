@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons  slot="start">
+      <ion-back-button color="liger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">Restaurants</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides>
+    <ion-slide *ngFor="let branch of branches">
+      <ion-card [ngStyle]="{ 'background-color': 'transparent'}">
+        <ion-text color="dark"><h4>{{branch.name}}</h4></ion-text>
+        <ion-card-title>
+          <ion-img style="height: 200px;" [src]="branch.resturant.imgPath"></ion-img>
+        </ion-card-title>
+        <ion-card-subtitle>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="8">
+                <ion-button shape="round" color="liger" *ngIf="branch.distance != 0" (click)="maps(branch.address)" expand="block"> <ion-icon name="navigate-outline"></ion-icon> Directions</ion-button>
+              </ion-col>
+              <ion-col size="4">
+                <ion-text *ngIf="branch.distance != 0"  color="dark">
+                  <h4>{{branch.distance}}KM</h4>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          
+        </ion-card-subtitle>
+        <ion-card-content>
+          <ion-card color="dark" *ngIf="branch.branchMeals.length !==0">
+            <ion-button shape="round"  color="liger" (click)="details('Special',branch.id)" expand="block">Specials</ion-button>
+          </ion-card>
+          <ion-card color="dark" *ngFor="let cat of branch.resturant.categories">
+            <ion-button shape="round"  color="liger" (click)="details(cat,branch.id)" expand="block">{{cat}}</ion-button>
+          </ion-card>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+              <ion-text color="dark">{{branch.contactNumber}}</ion-text>
+            </ion-col>
+        </ion-row>
+        <ion-row >
+          <ion-col>
+            <ion-button shape="round" color="liger" expand="block"  (click)="navigateToBookingModel(branch)"> Request Reservation</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

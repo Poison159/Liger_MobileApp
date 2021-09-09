@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title color="liger">Register or Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <div style="height: 70%;">
+    <ion-img [src]="imgPath"></ion-img>
+  </div>  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button shape="round" color="liger" expand="block" (click)="Register()"><ion-icon color="light" name="person-add-outline"></ion-icon><p style="color:white">Register</p></ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button shape="round" color="liger" expand="block" (click)="LogIn()"><ion-icon color="light" name="log-in-outline"></ion-icon><p style="color:white">Log In</p></ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

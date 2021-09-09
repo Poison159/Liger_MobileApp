@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button color="liger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">Liger | Register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="height: 60%;">
+    <ion-img [src]="imgPath"></ion-img>
+  </div>
+  <ion-card color="dark">
+    <ion-card-content>
+      <ion-input position="floating" placeholder="Name" [(ngModel)]="name"></ion-input>
+      <ion-input position="floating" placeholder="Email" [(ngModel)]="email"></ion-input>
+      <ion-input type="password" position="floating" placeholder="Password" [(ngModel)]="password"></ion-input>
+      <ion-input type="password" position="floating" placeholder="Confirm Password" [(ngModel)]="confirmPassword"></ion-input>
+      <ion-button shape="round" color="liger" size="small"  expand="block" (click)="Register()"><p style="zoom:1.4">Register </p></ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

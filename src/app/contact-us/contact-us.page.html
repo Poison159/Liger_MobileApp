@@ -1,0 +1,70 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button color="liger"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">Help-Center</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="dark" (click)="setHowTrue()"><p style="color:#ff6b24">How to scan QR Code</p></ion-item>
+  <ion-text *ngIf="howHidden" color="liger">
+    <ion-item lines="none" color="dark"> Step 1: Click scan code on the app main page</ion-item>
+    <ion-item lines="none" color="dark"> Step 2: Put the QR Code in the middle of the camera scope</ion-item>
+    <ion-item lines="none" color="dark"> Step 3: Wait for the menu to load</ion-item>
+    <ion-item lines="none" color="dark"> Step 4: Go through the different tabs of the menu</ion-item>
+  </ion-text>
+  <ion-item color="dark" (click)="setFreqAskedTrue()"><p style="color:#ff6b24">Frequently asked questions</p></ion-item>
+  <ion-text *ngIf="freqAskedHidden" color="liger">
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">I forgot my password</ion-card-subtitle>
+      <ion-card-content>
+        You can reset your password from the app. Please click on forgot password and I forgot my password follow the prompts to reset your password. If you are still having issues, please email us on info@liger.co.za and we will help resolve this for you.
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">How do update my account information</ion-card-subtitle>
+      <ion-card-content>
+        From the app, click on the main menu in the top left and click on profile. From here you can view and update your account information, as well as to delete your account if you need to.
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">How can I get my restaurant listed on LIGER?</ion-card-subtitle>
+      <ion-card-content>
+        Please email us at thato@liger.co.za to enquire about listings. Thanks for getting in touch with Liger.
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">I want to unsubscribe from emails</ion-card-subtitle>
+      <ion-card-content>
+        To unsubscribe from marketing emails, you can click the unsubscribe link at the bottom of any marketing email you have received.
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">How do I know if you service my area?</ion-card-subtitle>
+      <ion-card-content>
+        All you have to do is go to the search tab on the main menu to see all the restaurants within a 10-kilometer radius from your location.
+      </ion-card-content>
+    </ion-card>
+    <ion-card color="dark">
+      <br/>
+      <ion-card-subtitle style="text-align: center;">How do you ensure safety of my credit card information?</ion-card-subtitle>
+      <ion-card-content>
+        We take the security of your payment and personal information seriously. We work closely with Paygate, a market leader in online payments. Paygate holds PCI DSS Level 1 compliance certification, with over 10 million cardholders trusting them with their data.
+      </ion-card-content>
+    </ion-card>
+  </ion-text>
+  <ion-item color="dark"><p style="color:#ff6b24">Rate Us</p></ion-item>
+  <br/>
+  <ion-card color="dark">
+    <br/>
+    <ion-subtitle style="text-align: center;"><p style="color:#ff6b24">Customer support</p></ion-subtitle>
+    <ion-card-content style="text-align: center;"><p style="color:#ff6b24">info@liger.co.za</p></ion-card-content>
+  </ion-card>
+</ion-content>

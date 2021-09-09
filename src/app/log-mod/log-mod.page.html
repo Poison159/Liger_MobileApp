@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button color="success"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="liger">Log Out</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item color="dark">Are you sure you want to log out?</ion-item>
+  <br/>
+ <ion-button shape="round" color="liger" (click)="LogOut()">Yes</ion-button>
+ <ion-button shape="round" color="liger" (click)="dismiss()">No</ion-button>
+ </ion-content>
